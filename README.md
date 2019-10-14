@@ -1,3 +1,3 @@
-# Google sign In on React
+# Google Sign In on React
 
 ![Screenshot](screenshot.png)
