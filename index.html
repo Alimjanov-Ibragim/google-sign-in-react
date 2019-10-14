@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Forms</title>
+</head>
+<body>
+<script>
+function startTimer (tmr)
+{
+var B = document.getElementById ('btn'); B.disabled = 1;
+var S = document.getElementById ('mT'); S.innerHTML = tmr;
+ 
+t = setInterval (function ()
+   {
+   var f = function (x) {return (x / 100).toFixed (2).substr (2)}, 
+    d = ':',
+   h = 3.6e3,
+    y = S.innerHTML.split (d), 
+    z = --y [2] + y [0] * h + y [1] * 60;
+ 
+    if (!z) clearInterval (t), B.disabled = 0; 
+    S.innerHTML = [f (Math.floor (z / h)),
+                   f (Math.floor (z % h / 60)), 
+                   f (z % h % 60)].join (d);
+   }, 1000);
+}
+</script>
+<div class="bor">
+<p><button id="btn" onclick="startTimer ('00:02:30')">Запуск</button>
+<p><span id="mT">00:02:30</span>
+</div>
+
+
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
